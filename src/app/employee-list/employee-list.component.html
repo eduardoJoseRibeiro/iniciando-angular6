@@ -4,8 +4,15 @@
 
 <ul>
   <li *ngFor="let employer of employee; let i = index">
-    {{ employer.nome }} - R$ {{ employer.salario }}|
-    <span (click)="removeEmployee(i)" style="cursor: pointer; color: #2196f3"> Excluir </span>
+    {{ employer.nome }} -
+    <span [style.color]="employer.salario > 4000 ? 'green': 'grey'">
+      R$ {{ employer.salario.toFixed(2) }}
+    </span> |
+    <span
+      (click)="removeEmployee(i)"
+      style="cursor: pointer; color: #2196f3">
+      Excluir
+    </span>
   </li>
 </ul>
 
