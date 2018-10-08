@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../employee.service'
 import employee from '../employee'
 
 @Component({
@@ -8,15 +9,13 @@ import employee from '../employee'
 })
 export class EmployeeListComponent implements OnInit {
 
-  public employee = employee
-
-  constructor() { }
+  constructor(private employeeService: EmployeeService ) { }
 
   ngOnInit() {
   }
 
   public removeEmployee (index: number): void {
-    this.employee.splice(index, 1)
+    this.employeeService.employee.splice(index, 1)
   }
 
 }

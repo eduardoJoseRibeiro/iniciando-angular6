@@ -3,7 +3,7 @@
 </h1>
 
 <ul>
-  <li *ngFor="let employer of employee; let i = index">
+  <li *ngFor="let employer of employeeService.employee; let i = index">
     {{ employer.nome }} -
     <span [style.color]="employer.salario > 4000 ? 'green': 'grey'">
       R$ {{ employer.salario.toFixed(2) }}
@@ -20,6 +20,6 @@
   </li>
 </ul>
 
-<p *ngIf="employee.length === 0">
+<p *ngIf="employeeService.employee.length === 0">
   Nenhum Empregado Cadastrado
 </p>
