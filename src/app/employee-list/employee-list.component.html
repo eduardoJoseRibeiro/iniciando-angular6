@@ -1,0 +1,14 @@
+<h1>
+  Nossos Empregados
+</h1>
+
+<ul>
+  <li *ngFor="let employer of employee; let i = index">
+    {{ employer.nome }} - R$ {{ employer.salario }}|
+    <span (click)="removeEmployee(i)" style="cursor: pointer; color: #2196f3"> Excluir </span>
+  </li>
+</ul>
+
+<p *ngIf="employee.length === 0">
+  Nenhum Empregado Cadastrado
+</p>
