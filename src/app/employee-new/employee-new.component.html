@@ -4,4 +4,9 @@
 <label for="salario">Salario: </label>
 <input type="number" name="salario" [(ngModel)]="salario">
 
+<div *ngIf="salario < 3000">
+  <label for="bonus">Bônus: </label>
+  <input type="number" name="bonus" [(ngModel)]="bonus">
+</div>
+
 <button type="button" (click)="addEmployee()">Salvar</button>
